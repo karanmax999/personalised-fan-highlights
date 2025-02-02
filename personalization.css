@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://source.unsplash.com/1600x900/?football,stadium') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+}
+a .logo {
+    width: 8px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+/* Hover effect for the logo */
+a:hover .logo {
+    transform: scale(1.06);
+    opacity: 0.9; /* Adds opacity effect on hover */
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+/* Header Navigation */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: gold;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 60px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    margin: 20px 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+section:hover {
+    transform: scale(1.05);
+}
+
+section h2 {
+    font-size: 30px;
+}
+
+section p {
+    font-size: 18px;
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: gold;
+    color: black; 
+    border: none;
+    cursor: pointer;
+    display: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#scrollTopBtn:hover {
+    background-color: orange;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 50px 10px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+#home3{
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(244, 139, 18);
+    padding: 7px;
+    font-size: large;
+    color: white; 
+}

@@ -1,0 +1,72 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+a .logo {
+    width: 8px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+/* Hover effect for the logo */
+a:hover .logo {
+    transform: scale(1.06);
+    opacity: 0.9; /* Adds opacity effect on hover */
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+header {
+    background-color: #ff6f00;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    color: white;
+    font-size: 2.5em;
+}
+
+.container {
+    padding: 40px;
+}
+
+.player-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.player-item {
+    background-color: #333;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.player-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 90%;
+    margin-right: 20px;
+}
+
+.player-name {
+    font-size: 1.5em;
+    color: orange;
+}
+
+.player-info {
+    font-size: 1.1em;
+}
+
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 15px;
+    color: white;
+}

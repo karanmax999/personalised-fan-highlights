@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get started with personalized football highlights tailored to your favorite teams and players.">
+    <meta name="keywords" content="football highlights, personalized content, football fans, real-time updates">
+    <title>Get Started - Personalized Football Highlights</title>
+    <link rel="stylesheet" href="getstarted.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header>
+        
+        <nav class="navbar">
+            
+            <ul>
+                <a href="index.html">
+                    <img src="logo.jpg" alt="Website Logo" class="logo">
+                </a>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li><a href="highlights.html">Highlights</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="main-container">
+            <h1>Welcome to Personalized Football Highlights!</h1>
+            <p>Customize your football experience by selecting your favorite teams and players. Get real-time highlights tailored just for you.</p>
+
+            <form id="preferences-form">
+                <label for="teams">Select Your Favorite Teams:</label>
+                <select id="teams" name="teams" multiple>
+                    <option value="manu">Manchester United</option>
+                    <option value="liverpool">Liverpool</option>
+                    <option value="chelsea">Chelsea</option>
+                    <!-- Add more teams -->
+                </select>
+
+                <label for="players">Select Your Favorite Players:</label>
+                <select id="players" name="players" multiple>
+                    <option value="ronaldo">Cristiano Ronaldo</option>
+                    <option value="messi">Lionel Messi</option>
+                    <option value="neymar">Neymar</option>
+                    <!-- Add more players -->
+                </select>
+
+                <label for="alerts">Set Alerts for:</label>
+                <input type="checkbox" id="alerts" name="alerts"> Match Results
+                <input type="checkbox" id="alerts" name="alerts"> Player Stats
+                <input type="checkbox" id="alerts" name="alerts"> Game Highlights
+
+                <button type="submit">Save Preferences</button>
+            </form>
+
+            <div class="preview">
+                <h3>Your Personalized Highlights</h3>
+                <p>Here's a preview of what your highlights will look like:</p>
+                <!-- Display a sample highlight or dynamic preview -->
+            </div>
+
+            <div class="cta">
+                <button onclick="window.location.href='highlights.html'">Start Watching Highlights</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Personalized Football Highlights. All Rights Reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

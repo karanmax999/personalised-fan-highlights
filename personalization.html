@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Personalization Enhances Your Football Experience</title>
+    <link rel="stylesheet" href="personalization.css">
+    <script src="directing.js"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1>Football & Personalization</h1> 
+        <nav>
+            <ul>
+                <a id="home3" href="index.html">Home</a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>How Personalization Enhances Your Football Experience</h2>
+        <p>From choosing your favorite teams to getting personalized updates, personalization makes football more exciting!</p>
+    </section>
+
+    <!-- Customization Section -->
+    <section id="customization">
+        <h2>1. Customization in Football Games</h2>
+        <p>Football video games allow players to create custom teams, jerseys, and even stadiums, making the experience more immersive.</p>
+    </section>
+
+    <!-- Team Picking Section -->
+    <section id="team-picking">
+        <h2>2. Choosing & Following Your Favorite Team</h2>
+        <p>Fans can personalize their football experience by selecting their favorite team and receiving real-time updates, news, and match highlights.</p>
+    </section>
+
+    <!-- Fan Experience Section -->
+    <section id="fan-experience">
+        <h2>3. Enhancing Fan Experience with AI</h2>
+        <p>AI-driven platforms now provide tailored match highlights, fan polls, and exclusive content based on individual preferences.</p>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn">⬆ Scroll to Top</button>
+
+    <script>
+        // Scroll to Top Functionality
+        document.getElementById("scrollTopBtn").addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        // Show/hide button on scroll
+        window.addEventListener("scroll", function () {
+            let button = document.getElementById("scrollTopBtn");
+            if (window.scrollY > 100) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        });
+    </script>
+    <script src="directing.js"></script>
+</body>
+</html>

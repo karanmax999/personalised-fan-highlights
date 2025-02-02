@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Teams</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    .navbar {
+      background-color: #ff6811;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .team-block {
+      background-color: #222;
+      border: 3px solid #ff4500;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .team-block:hover {
+      transform: scale(1.05);
+      background-color: #333;
+    }
+
+    .team-block img {
+      width: 100%;
+      max-width: 100px;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-info {
+      margin-top: 2rem;
+      padding: 2rem;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      border: 2px solid #ff4500;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div>
+      <a href="index.html">Home</a>
+      <a href="Players.html">Players</a>
+      <a href="Matches.html">Matches</a>
+      <a href="teams.html">Teams</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="text-orange-500">Choose Your Favorite Team</h1>
+    <p>Click on a favorite team to read about them.</p>
+
+    <div class="team-grid">
+      <div class="team-block" onclick="showTeamInfo('Team 1')">
+        <img src="https://cdn.freebiesupply.com/logos/large/2x/real-madrid-c-f-logo-svg-vector.svg" alt="Team 1">
+        <p>Real Madrid</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 2')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/640px-Liverpool_FC.svg.png" alt="Team 2">
+        <p>Liverpool FC</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 3')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Inter_Old_Logo_%282007-2014%29.svg/746px-Inter_Old_Logo_%282007-2014%29.svg.png" alt="Team 3">
+        <p>Inter Milan</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 4')">
+        <img src="https://upload.wikimedia.org/wikipedia/sco/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" alt="Team 4">
+        <p>Arsenal FC</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 5')">
+        <img src="https://play-lh.googleusercontent.com/YW4ONr-DBRMYy6NAWkg3qbDFhfW0tvdRhQsafQxEiTmxvpr9GeUPVudRwsqhZkFDksU=w240-h480-rw" alt="Team 5">
+        <p>Bayer Leverkusen</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 6')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="Team 6">
+        <p>Barcelona</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 7')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png" alt="Team 7">
+        <p>Paris Saint-Germain</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 8')">
+        <img src="https://images.seeklogo.com/logo-png/50/2/atalanta-logo-png_seeklogo-503108.png" alt="Team 8">
+        <p>Atlanta</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 9')">
+        <img src="https://upload.wikimedia.org/wikipedia/sco/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png" alt="Team 9">
+        <p>Manchester City</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 10')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/2048px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" alt="Team 10">
+        <p>Bayern Munich</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 11')">
+        <img src="https://upload.wikimedia.org/wikipedia/sco/thumb/f/f1/FC_Porto.svg/1200px-FC_Porto.svg.png" alt="Team 11">
+        <p>FC Porto</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 12')">
+        <img src="https://images.seeklogo.com/logo-png/52/2/juventus-fc-logo-png_seeklogo-524351.png" alt="Team 12">
+        <p>Juventus</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 13')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/1306px-Logo_of_AC_Milan.svg.png" alt="Team 13">
+        <p>AC Milan</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 14')">
+        <img src="https://upload.wikimedia.org/wikipedia/sco/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png" alt="Team 14">
+        <p>Chelsea FC</p>
+      </div>
+      <div class="team-block" onclick="showTeamInfo('Team 15')">
+        <img src="https://upload.wikimedia.org/wikipedia/hif/f/ff/Manchester_United_FC_crest.png" alt="Team 15">
+        <p>Manchestor United</p>
+      </div>
+    </div>
+
+    <div id="team-info" class="team-info hidden">
+      <h2 id="team-name" class="text-orange-500"></h2>
+      <p id="team-description"></p>
+    </div>
+  </div>
+
+  <script>
+    const teamDetails = {
+  "Team 1": `
+    <h3>Real Madrid</h3>
+    <p>Real Madrid Club de Fútbol, commonly referred to as Real Madrid, is one of the most prestigious and successful football clubs in the world. Established on <strong>March 6, 1902</strong>, the club is based in Madrid, Spain. Known for their iconic white kits, Real Madrid is often referred to as <strong>"Los Blancos" (The Whites)</strong> or <strong>"Los Merengues" (The Meringues)</strong>.</p>
+    <h4>Achievements:</h4>
+    <ul>
+      <li><strong>UEFA Champions League Titles:</strong> 14 (Most in history, as of 2025)</li>
+      <li><strong>La Liga Titles:</strong> 35</li>
+      <li><strong>Copa del Rey Titles:</strong> 19</li>
+      <li><strong>FIFA Club World Cup Titles:</strong> 5</li>
+      <li>Numerous other domestic and international trophies.</li>
+    </ul>
+    <h4>Key Players:</h4>
+    <p>Real Madrid has been home to some of the greatest football players of all time, including:</p>
+    <ul>
+      <li><strong>Cristiano Ronaldo:</strong> The all-time leading scorer for the club.</li>
+      <li><strong>Alfredo Di Stéfano:</strong> A legendary figure in the club's history.</li>
+      <li><strong>Raúl González:</strong> Former captain and record appearance holder.</li>
+      <li><strong>Sergio Ramos:</strong> Iconic defender and leader.</li>
+      <li>Current stars include <strong>Vinícius Júnior</strong>, <strong>Rodrygo</strong>, and <strong>Jude Bellingham</strong>.</li>
+    </ul>
+    <h4>Stadium:</h4>
+    <p><strong>Santiago Bernabéu Stadium:</strong> Located in Madrid, this iconic venue has a seating capacity of over 80,000 and has been undergoing state-of-the-art renovations.</p>
+  `,
+  "Team 2": `
+  <h3>About Liverpool Football Club</h3>
+  <ul>
+    <li><strong>Founded:</strong> 1892</li>
+    <li><strong>Stadium:</strong> Anfield, Liverpool, England</li>
+    <li><strong>Manager:</strong> Jürgen Klopp</li>
+    <li><strong>Nicknames:</strong> The Reds</li>
+    <li><strong>Major Achievements:</strong></li>
+    <ul>
+      <li>6-time UEFA Champions League winners (last won in 2019)</li>
+      <li>19-time English League champions</li>
+      <li>7-time FA Cup winners</li>
+      <li>4-time UEFA Super Cup winners</li>
+      <li>1 FIFA Club World Cup (2019)</li>
+    </ul>
+    <li><strong>Key Players:</strong> Mohamed Salah, Virgil van Dijk, Alisson Becker, Trent Alexander-Arnold</li>
+    <li><strong>Rivalries:</strong> Manchester United (Northwest Derby), Everton (Merseyside Derby)</li>
+    <li><strong>Supporters:</strong> Known for their passionate fanbase and the anthem "You'll Never Walk Alone".</li>
+  </ul>
+  <p>Liverpool FC has a rich history and is one of the most successful and globally recognized football clubs. Under Jürgen Klopp, they have seen a resurgence in recent years, winning the Premier League in 2020 after a 30-year wait.</p>
+`,
+  "Team 3": `
+  <h3>About Inter Milan</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Football Club Internazionale Milano</li>
+    <li><strong>Founded:</strong> March 9, 1908</li>
+    <li><strong>Stadium:</strong> San Siro, Milan, Italy</li>
+    <li><strong>Manager:</strong> Simone Inzaghi</li>
+    <li><strong>Nicknames:</strong> Nerazzurri (The Black and Blues), Il Biscione (The Big Grass Snake)</li>
+    <li><strong>Major Achievements:</strong></li>
+    <ul>
+      <li>3-time UEFA Champions League winners (last won in 2010)</li>
+      <li>19-time Serie A champions</li>
+      <li>7-time Coppa Italia winners</li>
+      <li>5-time Supercoppa Italiana winners</li>
+      <li>3-time Intercontinental Cup winners</li>
+      <li>1 FIFA Club World Cup (2010)</li>
+    </ul>
+    <li><strong>Key Players:</strong> Lautaro Martínez, Nicolò Barella, André Onana, Hakan Çalhanoğlu</li>
+    <li><strong>Rivalries:</strong> AC Milan (Derby della Madonnina), Juventus (Derby d'Italia)</li>
+    <li><strong>Supporters:</strong> Known for their loyal and passionate fanbase, with the Curva Nord being the heart of the support at the San Siro.</li>
+  </ul>
+  <p>Inter Milan is one of the most prestigious clubs in Italian and European football. Known for their iconic black and blue striped jerseys, the club has a rich legacy of domestic and international success. Inter became the first Italian team to achieve a treble, winning the Serie A, Coppa Italia, and Champions League in the 2009-10 season under José Mourinho.</p>
+`,
+  "Team 4":`
+  <h3>About Arsenal FC</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Arsenal Football Club</li>
+    <li><strong>Founded:</strong> 1886</li>
+    <li><strong>Stadium:</strong> Emirates Stadium, London, England</li>
+    <li><strong>Manager:</strong> Mikel Arteta</li>
+    <li><strong>Nicknames:</strong> The Gunners</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>13-time English league champions (including 3 Premier League titles)</li>
+    <li>14-time FA Cup winners (record holders)</li>
+    <li>2-time League Cup winners</li>
+    <li>Winners of the UEFA Cup Winners' Cup (1993-94)</li>
+    <li>Undefeated Premier League season (2003-04, known as "The Invincibles")</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Martin Ødegaard</li>
+    <li>Bukayo Saka</li>
+    <li>Gabriel Jesus</li>
+    <li>William Saliba</li>
+    <li>Declan Rice</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Tottenham Hotspur (North London Derby)</li>
+    <li>Manchester United (historic rivalry)</li>
+    <li>Chelsea</li>
+  </ul>
+
+  <p>
+    Arsenal FC is one of the most successful and popular clubs in English football. 
+    Known for their attacking style of play and a history of fielding legendary players, 
+    Arsenal has a rich heritage and a global fanbase. The club's iconic season in 2003-04, 
+    where they went unbeaten in the league, remains one of their proudest achievements. 
+    The Emirates Stadium, their home since 2006, is a state-of-the-art facility and a symbol of the club's ambition.
+  </p>
+`,
+  "Team 5":`
+  <h3>About Bayer Leverkusen</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Bayer 04 Leverkusen Fußball GmbH</li>
+    <li><strong>Founded:</strong> 1904</li>
+    <li><strong>Stadium:</strong> BayArena, Leverkusen, Germany</li>
+    <li><strong>Manager:</strong> Xabi Alonso</li>
+    <li><strong>Nicknames:</strong> Die Werkself (The Company Eleven)</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>Winners of the UEFA Cup (1987-88)</li>
+    <li>DFB-Pokal winners (1992-93)</li>
+    <li>UEFA Champions League runners-up (2001-02)</li>
+    <li>Consistent Bundesliga top-four finishes</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Florian Wirtz</li>
+    <li>Jeremie Frimpong</li>
+    <li>Patrik Schick</li>
+    <li>Exequiel Palacios</li>
+    <li>Jonathan Tah</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>FC Köln (Rhein Derby)</li>
+    <li>Borussia Dortmund</li>
+    <li>Bayern Munich</li>
+  </ul>
+
+  <p>
+    Bayer Leverkusen is a club with a strong reputation in German and European football. 
+    Established by employees of the Bayer pharmaceutical company, the team has since 
+    developed into a consistent competitor in the Bundesliga and on the European stage. 
+    Despite narrowly missing out on several major trophies, including the Champions League 
+    in 2002, Bayer Leverkusen is respected for its ability to nurture young talents and 
+    play an attractive style of football. BayArena, their home ground, is known for its vibrant atmosphere.
+  </p>
+`,
+  "Team 6": `
+  <h3>About FC Barcelona</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Futbol Club Barcelona</li>
+    <li><strong>Founded:</strong> November 29, 1899</li>
+    <li><strong>Stadium:</strong> Spotify Camp Nou, Barcelona, Spain</li>
+    <li><strong>Manager:</strong> Xavi Hernández</li>
+    <li><strong>Nicknames:</strong> Barça, Blaugrana</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>5-time UEFA Champions League winners (1991-92, 2005-06, 2008-09, 2010-11, 2014-15)</li>
+    <li>3-time FIFA Club World Cup winners (2009, 2011, 2015)</li>
+    <li>26-time La Liga champions</li>
+    <li>31-time Copa del Rey winners</li>
+    <li>3-time UEFA Super Cup winners</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Robert Lewandowski</li>
+    <li>Pedri</li>
+    <li>Gavi</li>
+    <li>Jules Koundé</li>
+    <li>Marc-André ter Stegen</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Real Madrid (El Clásico)</li>
+    <li>Espanyol (Catalan Derby)</li>
+    <li>Atlético Madrid</li>
+  </ul>
+
+  <p>
+    FC Barcelona is one of the most iconic and successful football clubs in the world. Known for their unique 
+    playing style, often referred to as "tiki-taka," Barcelona has been home to some of the greatest players 
+    in football history, including Lionel Messi, Xavi, and Andrés Iniesta. The club is also renowned for its 
+    strong emphasis on youth development through its academy, La Masia. Barça's motto, 
+    "Més que un club" (More than a club), reflects its cultural and political significance in Catalonia. 
+    With a passionate fan base and a history of excellence, Barcelona remains a global powerhouse in football.
+  </p>
+`,
+  "Team 7": `
+  <h3>About Paris Saint-Germain</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Paris Saint-Germain Football Club</li>
+    <li><strong>Founded:</strong> August 12, 1970</li>
+    <li><strong>Stadium:</strong> Parc des Princes, Paris, France</li>
+    <li><strong>Manager:</strong> Luis Enrique</li>
+    <li><strong>Nicknames:</strong> Les Parisiens (The Parisians), Les Rouge-et-Bleu (The Red and Blues)</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>11-time Ligue 1 champions</li>
+    <li>14-time Coupe de France winners</li>
+    <li>9-time Coupe de la Ligue winners</li>
+    <li>1-time UEFA Cup Winners' Cup (1995-96)</li>
+    <li>UEFA Champions League runners-up (2019-20)</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Kylian Mbappé</li>
+    <li>Neymar Jr.</li>
+    <li>Achraf Hakimi</li>
+    <li>Gianluigi Donnarumma</li>
+    <li>Marquinhos</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Olympique de Marseille (Le Classique)</li>
+    <li>AS Monaco</li>
+  </ul>
+
+  <p>
+    Paris Saint-Germain, commonly known as PSG, is one of the most prominent football clubs in Europe. 
+    Despite being a relatively young club, PSG has risen to global prominence due to significant investments 
+    and a star-studded lineup. Known for their attacking flair and dominance in French football, PSG has 
+    become a dominant force in Ligue 1, winning numerous titles and breaking records. The club boasts a 
+    loyal fan base and an ambitious vision of becoming the best club in Europe, aiming to secure the 
+    elusive UEFA Champions League title. PSG's home, Parc des Princes, is a historic stadium that 
+    resonates with football fans around the world.
+  </p>
+`,
+  "Team 8":`
+  <h3>About Atalanta BC</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Atalanta Bergamasca Calcio</li>
+    <li><strong>Founded:</strong> October 17, 1907</li>
+    <li><strong>Stadium:</strong> Gewiss Stadium, Bergamo, Italy</li>
+    <li><strong>Manager:</strong> Gian Piero Gasperini</li>
+    <li><strong>Nicknames:</strong> La Dea (The Goddess), Nerazzurri (The Black and Blues)</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>1-time Coppa Italia winners (1962-63)</li>
+    <li>Multiple UEFA Champions League qualifications</li>
+    <li>Consistent top-four finishes in Serie A in recent seasons</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Duván Zapata</li>
+    <li>Mario Pašalić</li>
+    <li>Teun Koopmeiners</li>
+    <li>Joakim Mæhle</li>
+    <li>Juan Musso</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Brescia (Derby della Lombardia)</li>
+    <li>Inter Milan</li>
+    <li>AC Milan</li>
+  </ul>
+
+  <p>
+    Atalanta Bergamasca Calcio, commonly referred to as Atalanta, is a football club based in Bergamo, Italy. 
+    Known for their attacking style of play and tactical flexibility, Atalanta has become a fan favorite in recent 
+    years. Under the leadership of Gian Piero Gasperini, the club has earned a reputation for developing young talent 
+    and challenging the traditional Serie A powerhouses. Their recent performances in both domestic and European 
+    competitions have made them a respected force in football. Atalanta's passionate supporters and the vibrant 
+    atmosphere at Gewiss Stadium make it one of the most exciting clubs to follow.
+  </p>
+`,
+  "Team 9": `
+  <h3>About Manchester City FC</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Manchester City Football Club</li>
+    <li><strong>Founded:</strong> 1880 (as St. Mark's, became Manchester City in 1894)</li>
+    <li><strong>Stadium:</strong> Etihad Stadium, Manchester, England</li>
+    <li><strong>Manager:</strong> Pep Guardiola</li>
+    <li><strong>Nicknames:</strong> The Citizens, City, Sky Blues</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>9-time English top-flight champions (most recently in 2023)</li>
+    <li>6-time FA Cup winners</li>
+    <li>8-time EFL Cup winners</li>
+    <li>UEFA Champions League winners (2023)</li>
+    <li>UEFA Super Cup winners (2023)</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Erling Haaland</li>
+    <li>Kevin De Bruyne</li>
+    <li>Bernardo Silva</li>
+    <li>Ruben Dias</li>
+    <li>Rodri</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Manchester United (Manchester Derby)</li>
+    <li>Liverpool</li>
+    <li>Chelsea</li>
+    <li>Arsenal</li>
+  </ul>
+
+  <p>
+    Manchester City Football Club, based in Manchester, England, is one of the most successful clubs in modern football. 
+    The club experienced a dramatic resurgence after the 2008 takeover by Abu Dhabi United Group, which ushered in 
+    a new era of dominance in both domestic and international competitions. Under Pep Guardiola, Manchester City has 
+    set numerous records for points, goals, and style of play in the Premier League. The 2022-23 season was historic 
+    as City achieved the treble, winning the Premier League, FA Cup, and UEFA Champions League. Known for their 
+    high-pressing game, tactical versatility, and attacking brilliance, Manchester City is a powerhouse in world football.
+  </p>
+`,
+  "Team 10":`
+  <h3>About Bayern Munich</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Fußball-Club Bayern München e.V.</li>
+    <li><strong>Founded:</strong> February 27, 1900</li>
+    <li><strong>Stadium:</strong> Allianz Arena, Munich, Germany</li>
+    <li><strong>Manager:</strong> Thomas Tuchel</li>
+    <li><strong>Nicknames:</strong> Die Roten (The Reds), Der FCB</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>33-time Bundesliga champions (record)</li>
+    <li>20-time DFB-Pokal winners</li>
+    <li>6-time UEFA Champions League winners</li>
+    <li>2-time UEFA Super Cup winners</li>
+    <li>2-time FIFA Club World Cup winners</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Thomas Müller</li>
+    <li>Joshua Kimmich</li>
+    <li>Jamal Musiala</li>
+    <li>Manuel Neuer</li>
+    <li>Leon Goretzka</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Borussia Dortmund (Der Klassiker)</li>
+    <li>RB Leipzig</li>
+    <li>1860 Munich</li>
+    <li>Hamburger SV</li>
+  </ul>
+
+  <p>
+    Bayern Munich, based in Munich, Germany, is the most successful football club in German history and one of the most 
+    dominant teams in world football. Founded in 1900, the club has consistently set the standard for excellence in both 
+    domestic and international competitions. Bayern has won an unparalleled 33 Bundesliga titles, including numerous 
+    consecutive triumphs in recent years. The club is also renowned for its six UEFA Champions League victories, with 
+    their most recent triumph coming in 2020, completing a historic treble. Known for their attacking style, disciplined 
+    defense, and iconic players, Bayern Munich has a reputation as a global football powerhouse. Their home, the Allianz 
+    Arena, is one of the most iconic stadiums in the world.
+  </p>
+`,
+"Team 11":`
+  <h3>About FC Porto</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Futebol Clube do Porto</li>
+    <li><strong>Founded:</strong> September 28, 1893</li>
+    <li><strong>Stadium:</strong> Estádio do Dragão, Porto, Portugal</li>
+    <li><strong>Manager:</strong> Sérgio Conceição</li>
+    <li><strong>Nicknames:</strong> Dragões (Dragons), Azuis e Brancos (Blue and Whites)</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>30-time Primeira Liga champions</li>
+    <li>18-time Taça de Portugal winners</li>
+    <li>2-time UEFA Champions League winners</li>
+    <li>2-time UEFA Europa League winners</li>
+    <li>2-time UEFA Super Cup finalists</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Pepe</li>
+    <li>Otávio</li>
+    <li>Mehdi Taremi</li>
+    <li>Diogo Costa</li>
+    <li>Wendell</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>SL Benfica (O Clássico)</li>
+    <li>Sporting CP</li>
+  </ul>
+
+  <p>
+    FC Porto is one of Portugal's most successful and prestigious football clubs. Founded in 1893, it is known for its 
+    passionate fanbase, rich history, and impressive achievements in both domestic and international football. The 
+    Dragons have won the Primeira Liga 30 times, demonstrating their dominance in Portuguese football. On the European 
+    stage, FC Porto has won the UEFA Champions League twice, with their most recent triumph under José Mourinho in 2004. 
+    The club is also known for its excellent scouting network, nurturing world-class players like Deco, Radamel Falcao, 
+    and Hulk. Estádio do Dragão, their home ground, is a symbol of their pride and a fortress for the team.
+  </p>
+`,
+"Team 12":`
+  <h3>About Juventus</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Juventus Football Club</li>
+    <li><strong>Founded:</strong> November 1, 1897</li>
+    <li><strong>Stadium:</strong> Allianz Stadium, Turin, Italy</li>
+    <li><strong>Manager:</strong> Massimiliano Allegri</li>
+    <li><strong>Nicknames:</strong> La Vecchia Signora (The Old Lady), Bianconeri (The Black and Whites)</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>36-time Serie A champions</li>
+    <li>14-time Coppa Italia winners</li>
+    <li>2-time UEFA Champions League winners</li>
+    <li>3-time UEFA Europa League winners</li>
+    <li>2-time UEFA Super Cup winners</li>
+    <li>Intercontinental Cup winners</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Federico Chiesa</li>
+    <li>Dusan Vlahovic</li>
+    <li>Paul Pogba</li>
+    <li>Manuel Locatelli</li>
+    <li>Wojciech Szczęsny</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Inter Milan (Derby d'Italia)</li>
+    <li>AC Milan</li>
+    <li>Torino (Derby della Mole)</li>
+  </ul>
+
+  <p>
+    Juventus, based in Turin, Italy, is one of the most iconic football clubs in the world. Founded in 1897, it has 
+    established itself as a powerhouse in Italian and European football. With a record 36 Serie A titles, Juventus has 
+    consistently demonstrated dominance in Italian football. Internationally, the club has won the UEFA Champions League 
+    twice and boasts an illustrious history of success in other European competitions. Known for their black-and-white 
+    striped kits, Juventus has been home to football legends such as Alessandro Del Piero, Gianluigi Buffon, Michel 
+    Platini, and Cristiano Ronaldo. The Allianz Stadium is their fortress, hosting passionate fans who celebrate the 
+    legacy of La Vecchia Signora.
+  </p>
+`,
+"Team 13": `
+  <h3>About AC Milan</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Associazione Calcio Milan</li>
+    <li><strong>Founded:</strong> December 16, 1899</li>
+    <li><strong>Stadium:</strong> San Siro (Stadio Giuseppe Meazza), Milan, Italy</li>
+    <li><strong>Manager:</strong> Stefano Pioli</li>
+    <li><strong>Nicknames:</strong> Rossoneri (The Red and Blacks), Il Diavolo (The Devil)</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>19-time Serie A champions</li>
+    <li>5-time Coppa Italia winners</li>
+    <li>7-time UEFA Champions League winners</li>
+    <li>2-time UEFA Cup Winners' Cup winners</li>
+    <li>5-time UEFA Super Cup winners</li>
+    <li>3-time Intercontinental Cup winners</li>
+    <li>1-time FIFA Club World Cup winner</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Rafael Leão</li>
+    <li>Olivier Giroud</li>
+    <li>Mike Maignan</li>
+    <li>Fikayo Tomori</li>
+    <li>Theo Hernández</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Inter Milan (Derby della Madonnina)</li>
+    <li>Juventus</li>
+    <li>Napoli</li>
+  </ul>
+
+  <p>
+    AC Milan, based in Milan, Italy, is one of the most successful and historic clubs in world football. Founded in 
+    1899, the Rossoneri have a rich legacy, particularly in European competitions. AC Milan has won the UEFA Champions 
+    League seven times, making them one of the most decorated clubs in Europe. Domestically, the club has claimed 19 
+    Serie A titles, showcasing their consistent dominance in Italian football. Known for their iconic red and black 
+    striped kits, AC Milan has been home to football legends such as Paolo Maldini, Marco van Basten, Franco Baresi, 
+    Kaka, and Andriy Shevchenko. The San Siro stadium, shared with rivals Inter Milan, is an iconic venue known for its 
+    electrifying atmosphere during matches.
+  </p>
+`,
+"Team 14": `
+  <h3>About Chelsea FC</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Chelsea Football Club</li>
+    <li><strong>Founded:</strong> March 10, 1905</li>
+    <li><strong>Stadium:</strong> Stamford Bridge, London, England</li>
+    <li><strong>Manager:</strong> Mauricio Pochettino</li>
+    <li><strong>Nicknames:</strong> The Blues, The Pensioners</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>6-time Premier League champions</li>
+    <li>8-time FA Cup winners</li>
+    <li>5-time EFL Cup winners</li>
+    <li>2-time UEFA Champions League winners (2012, 2021)</li>
+    <li>2-time UEFA Europa League winners</li>
+    <li>2-time UEFA Super Cup winners</li>
+    <li>1-time FIFA Club World Cup winner (2021)</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Reece James</li>
+    <li>Thiago Silva</li>
+    <li>Enzo Fernández</li>
+    <li>Raheem Sterling</li>
+    <li>Christopher Nkunku</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Arsenal (London Derby)</li>
+    <li>Tottenham Hotspur</li>
+    <li>West Ham United</li>
+    <li>Manchester United</li>
+  </ul>
+
+  <p>
+    Chelsea FC, based in Fulham, London, is one of the most prominent football clubs in England and Europe. Founded in 
+    1905, the club rose to prominence in the modern era, especially under the ownership of Roman Abramovich in the early 
+    2000s. Chelsea has achieved remarkable success, including two UEFA Champions League titles, solidifying their 
+    position among Europe's elite. Known for their blue kits, the club has been home to legendary players such as 
+    Frank Lampard, Didier Drogba, John Terry, and Eden Hazard. Stamford Bridge, their historic stadium, is renowned for 
+    its passionate fanbase. Chelsea continues to be a formidable force in English and international football.
+  </p>
+`,
+"Team 15":`
+  <h3>About Manchester United</h3>
+  <ul>
+    <li><strong>Full Name:</strong> Manchester United Football Club</li>
+    <li><strong>Founded:</strong> 1878 (as Newton Heath LYR Football Club, renamed Manchester United in 1902)</li>
+    <li><strong>Stadium:</strong> Old Trafford, Manchester, England</li>
+    <li><strong>Manager:</strong> Erik ten Hag</li>
+    <li><strong>Nicknames:</strong> The Red Devils</li>
+  </ul>
+
+  <h3>Major Achievements:</h3>
+  <ul>
+    <li>20-time English top-flight champions (including Premier League titles)</li>
+    <li>12-time FA Cup winners</li>
+    <li>5-time EFL Cup winners</li>
+    <li>3-time UEFA Champions League winners (1968, 1999, 2008)</li>
+    <li>1-time UEFA Europa League winner (2017)</li>
+    <li>1-time FIFA Club World Cup winner (2008)</li>
+  </ul>
+
+  <h3>Key Players:</h3>
+  <ul>
+    <li>Bruno Fernandes</li>
+    <li>Marcus Rashford</li>
+    <li>Casemiro</li>
+    <li>Raphaël Varane</li>
+    <li>Antony</li>
+  </ul>
+
+  <h3>Rivalries:</h3>
+  <ul>
+    <li>Liverpool (Northwest Derby)</li>
+    <li>Manchester City (Manchester Derby)</li>
+    <li>Arsenal</li>
+    <li>Leeds United</li>
+  </ul>
+
+  <p>
+    Manchester United, one of the most successful and iconic football clubs in the world, has a rich history dating back 
+    to its formation in 1878. Known as "The Red Devils," the club has a legacy of success in domestic and international 
+    competitions. Under the legendary management of Sir Alex Ferguson, United dominated English football, claiming 13 
+    Premier League titles and the historic treble in 1999, which included the UEFA Champions League, Premier League, and 
+    FA Cup. Manchester United has been home to legendary players such as Ryan Giggs, Paul Scholes, Eric Cantona, and 
+    Cristiano Ronaldo. Old Trafford, their iconic stadium, is often referred to as the "Theatre of Dreams," embodying 
+    the club's ambition, legacy, and passionate fanbase.
+  </p>
+`
+
+};
+
+
+function showTeamInfo(team) {
+  const teamInfo = document.getElementById('team-info');
+  document.getElementById('team-name').textContent = team;
+  document.getElementById('team-description').innerHTML = teamDetails[team] || "Details not available.";
+  teamInfo.classList.remove('hidden');
+}
+
+  </script>
+
+</body>
+</html>
